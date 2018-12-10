@@ -73,6 +73,11 @@ output "private_subnets_cidr_blocks" {
   value       = ["${aws_subnet.private.*.cidr_block}"]
 }
 
+output "private_subnets_azs" {
+  description = "List of azs of private subnets"
+  value       = ["${aws_subnet.private.*.availability_zone}"]
+}
+
 output "public_subnets" {
   description = "List of IDs of public subnets"
   value       = ["${aws_subnet.public.*.id}"]
@@ -81,6 +86,11 @@ output "public_subnets" {
 output "public_subnets_cidr_blocks" {
   description = "List of cidr_blocks of public subnets"
   value       = ["${aws_subnet.public.*.cidr_block}"]
+}
+
+output "public_subnets_azs" {
+  description = "List of azs of public subnets"
+  value       = ["${aws_subnet.public.*.availability_zone}"]
 }
 
 output "database_subnets" {
